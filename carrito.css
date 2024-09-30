@@ -1,75 +1,46 @@
-/* Control del tamaño de las imágenes */
-.cart-actions img {
-    width: 30px;
-    height: auto;
-    margin-left: 15px;
+body {
+    font-family: Arial, sans-serif;
 }
 
-/* Alineación del header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
+h1, h2 {
+    text-align: center;
 }
 
-.user-info {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.cart-actions {
-    display: flex;
-    align-items: center;
-}
-/* Tabla */
-#carrito-table {
-    width: 80%;
-    margin: 20px auto;
+table {
+    width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    margin: 20px 0;
 }
 
-#carrito-table th, #carrito-table td {
+th, td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: center;
+    text-align: left;
 }
 
-#carrito-table th {
+th {
     background-color: #f2f2f2;
-    color: #333;
 }
 
-#carrito-table td {
-    background-color: #fff;
+.cart-action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
 }
 
-/* Estilo del enlace "ver" */
-.ver-button {
-    color: #007bff;
+a {
+    color: blue;
+    cursor: pointer;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.ver-button:hover {
+a:hover {
     text-decoration: underline;
-}
-
-/* Espaciado del encabezado y tabla */
-main {
-    text-align: center;
-}
-
-h2 {
-    color: #333;
-    font-size: 22px;
 }

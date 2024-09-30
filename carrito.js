@@ -1,21 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const userId = 5; // El ID del usuario
+// Simulación de datos de pedidos
+const pedidos = [
+    { numero: 12, fecha: '24/06/2022' },
+    { numero: 1, fecha: '21/06/2022' },
+    { numero: 3, fecha: '21/06/2022' }
+];
 
-    // Obtener los carritos desde la API de FakeStore
-    fetch(`https://fakestoreapi.com/carts/user/${userId}`)
-        .then(res => res.json())
-        .then(carts => {
-            const tbody = document.querySelector("#carrito-table tbody");
+// Función para renderizar los pedidos en la tabla
+function renderPedidos() {
+    const pedidosTable = document.getElementById('pedidos-table');
+    pedidosTable.innerHTML = '';  // Limpiar el contenido existente
 
-            carts.forEach(cart => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${cart.id}</td>
-                    <td>${new Date(cart.date).toLocaleDateString()}</td>
-                    <td><a href="detalle.html?id=${cart.id}" class="ver-button">Ver</a></td>
-                `;
-                tbody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-});
+    pedidos.forEach(pedido => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${pedido.numero}</td>
+            <td>${pedido.fecha}</td>
+            <td><a href="detalle.html?pedido=${pedido.numero}" class="ver-button">Ver</a></td>
+        `;
+        pedidosTable.appendChild(row);
+    });
+}
+
+// Renderizar los pedidos al cargar la página
+document.addEventListener('DOMContentLoaded', renderPedidos);
