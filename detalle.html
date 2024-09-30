@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Pedido</title>
+    <link rel="stylesheet" href="detalle.css">
+</head>
+<body>
+
+<header>
+    <h1>Shop Online</h1>
+    <div class="header-options">
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Salir</a>
+    </div>
+</header>
+
+<h2>Bienvenido: Angel Diaz</h2>
+
+<section class="pedido-info">
+    <p>Fecha: 30/09/2024</p>
+    <p>Pedido Número: 12345</p>
+    <p>Nombre del Cliente: Angel Diaz</p>
+</section>
+
+<h3>Relación de Productos</h3>
+<table id="detalle-table">
+    <thead>
+        <tr>
+            <th>Concepto</th>
+            <th>Cantidad</th>
+            <th>Valor</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Producto 1</td>
+            <td>2</td>
+            <td>$50</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Producto 2</td>
+            <td>1</td>
+            <td>$75</td>
+            <td>$75</td>
+        </tr>
+        <!-- Más productos aquí -->
+    </tbody>
+</table>
+
+<!-- Total de la tabla -->
+<div class="total">
+    <p>Total: $175</p>
+</div>
+
+<!-- Botones -->
+<div class="actions">
+    <button>Actualizar</button>
+    <button>Confirmar</button>
+    <button onclick="location.href='carrito.html'">Seguir Comprando</button>
+</div>
+<script src="detalle.js"></script>
+</body>
+</html>

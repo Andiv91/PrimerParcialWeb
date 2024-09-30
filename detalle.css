@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-options a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+h2, h3 {
+    margin-top: 20px;
+}
+
+.pedido-info p {
+    font-size: 18px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.total {
+    width: 80%;
+    text-align: right;
+    margin: 10px auto;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+.actions button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background-color: #2563eb;
+}
