@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesContainer = document.getElementById('category-buttons');
     const userId = 5; // Asumiendo que el ID del usuario es 5
 
-    // Función para cargar categorías (API)
+    // Función para cargar todas las categorías (API)
     function loadCategories() {
         fetch('https://fakestoreapi.com/products/categories')
             .then(res => res.json())
@@ -13,6 +13,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.textContent = category.charAt(0).toUpperCase() + category.slice(1);
                     btn.addEventListener('click', () => loadProducts(category));
                     categoriesContainer.appendChild(btn);
+                });
+            });
+
+        // Cargar todos los productos al iniciar la página
+        loadAllProducts();
+    }
+
+    // Función para cargar todos los productos (API)
+    function loadAllProducts() {
+        productsContainer.innerHTML = ''; // Limpiar el contenedor de productos
+
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(products => {
+                products.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('product-card');
+
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <p>$${product.price}</p>
+                        <button data-id="${product.id}">Add</button>
+                    `;
+                    productsContainer.appendChild(productCard);
+                });
+
+                // Agregar evento al botón "Add"
+                const addButtons = document.querySelectorAll('.product-card button');
+                addButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = e.target.getAttribute('data-id');
+                        addToCart(userId, productId);
+                    });
                 });
             });
     }
@@ -74,6 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error:', error));
     }
 
-    // Cargar categorías cuando se inicia la tienda
+    // Cargar categorías y todos los productos cuando se inicia la tienda
     loadCategories();
 });

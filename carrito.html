@@ -9,27 +9,36 @@
 <body>
     <header>
         <h1>Shop Online</h1>
+        <p>Anytime, Anywhere</p>
         <div class="cart-action">
             <span>Bienvenido: Jhon Doe</span>
-            <span><a href="#">Carrito</a></span>
-            <span><a href="#">Salir</a></span>
+            <span><a href="#" id="carrito-btn">Carrito</a></span>
+            <span><a href="#" id="salir-btn">Salir</a></span>
         </div>
     </header>
 
-    <h2>Relación de Pedidos</h2>
+    <h2>Relación de Productos</h2>
 
     <table>
         <thead>
             <tr>
-                <th>Número</th>
-                <th>Fecha Solicitud</th>
+                <th>Numero</th>
+                <th>Fecha solicitud</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody id="pedidos-table">
-            <!-- Los pedidos serán insertados aquí -->
+            <!-- Los productos serán insertados aquí -->
         </tbody>
     </table>
+
+    <h3>Total: <span id="total">0</span></h3>
+
+    <div class="actions">
+        <button id="actualizar-btn">Actualizar</button>
+        <button id="confirmar-btn">Confirmar</button>
+        <button id="seguir-btn">Seguir comprando</button>
+    </div>
 
     <script src="carrito.js"></script>
 </body>

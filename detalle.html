@@ -10,18 +10,19 @@
 
 <header>
     <h1>Shop Online</h1>
+    <p>Anytime, Anywhere</p>
     <div class="header-options">
         <a href="carrito.html">Carrito</a>
-        <a href="login.html">Salir</a>
+        <a href="index.html">Salir</a>
     </div>
 </header>
 
 <h2>Bienvenido: John Doe</h2>
 
 <section class="pedido-info">
-    <p>Fecha: 30/09/2024</p>
-    <p>Pedido Número: 12345</p>
-    <p>Nombre del Cliente: John Doe</p>
+    <p>Fecha: <span id="pedido-fecha">--/--/----</span></p>
+    <p>Pedido Número: <span id="pedido-id">----</span></p>
+    <p>Nombre del Cliente: <span id="pedido-cliente">----</span></p>
 </section>
 
 <h3>Relación de Productos</h3>
@@ -35,33 +36,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Producto 1</td>
-            <td>2</td>
-            <td>$50</td>
-            <td>$100</td>
-        </tr>
-        <tr>
-            <td>Producto 2</td>
-            <td>1</td>
-            <td>$75</td>
-            <td>$75</td>
-        </tr>
-        <!-- Más productos aquí -->
+        <!-- Los productos se cargarán dinámicamente aquí -->
     </tbody>
 </table>
 
 <!-- Total de la tabla -->
 <div class="total">
-    <p>Total: $175</p>
+    <p>Total: $<span id="total-amount">0.00</span></p>
 </div>
 
 <!-- Botones -->
 <div class="actions">
     <button>Actualizar</button>
     <button>Confirmar</button>
-    <button onclick="location.href='carrito.html'">Seguir Comprando</button>
+    <button onclick="location.href='shop.html'">Seguir Comprando</button>
 </div>
+
 <script src="detalle.js"></script>
 </body>
 </html>
